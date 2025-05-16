@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Design Analyzer</title>
+  <style>
+    video, canvas, img {
+      width: 100%;
+      max-width: 600px;
+    }
+    #captured-image-container, #results-section {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Design Analyzer</h1>
+
+  <div id="camera-container">
+    <video id="camera-feed" autoplay></video>
+    <button id="capture-btn">Capture</button>
+  </div>
+
+  <div id="captured-image-container">
+    <img id="captured-image" alt="Captured Image" />
+    <button id="analyze-btn">Analyze Object</button>
+    <button id="retake-btn">Retake</button>
+  </div>
+
+  <canvas id="capture-canvas" style="display:none;"></canvas>
+
+  <div id="results-section">
+    <p>Detected Object: <span id="detected-object-text">-</span></p>
+    <canvas id="results-chart" width="600" height="400"></canvas>
+  </div>
+
+  <!-- Chart.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Your JS -->
+  <script src="script.js"></script>
+</body>
+</html>
